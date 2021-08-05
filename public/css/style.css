@@ -56,7 +56,7 @@ nav h2{
 }
 
 .message-sent{
-    width: 40%;
+    max-width: 40%;
     margin: 5px 10px;
     padding: 10px;
     border-radius: 10px;
@@ -75,6 +75,20 @@ nav h2{
     clear: both;
     background-color: whitesmoke;
     color: black;
+}
+
+.admin-message{
+    clear: both;
+    text-align: center;
+    font-family: 'Mali', cursive;
+    margin: 20px 0px;
+}
+
+.admin-message div{
+    background-color: #c7c7c7;
+    display: inline;
+    padding: 4px 10px;
+    border-radius: 11px;
 }
 
 .left h5{

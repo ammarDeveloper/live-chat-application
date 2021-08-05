@@ -1,15 +1,17 @@
 {
-  "name": "nodeserver",
+  "name": "livechat",
   "version": "1.0.0",
-  "description": "This the node server for our chat appliction",
+  "description": "live chat application",
   "main": "index.js",
   "scripts": {
-    "start": "node server"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node nodeserver/index.js"
   },
   "author": "Mohammed Ammar",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "moment": "^2.29.1",
     "socket.io": "^4.1.3"
   }
 }

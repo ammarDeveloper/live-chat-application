@@ -20,10 +20,27 @@ socket.on('roomUsers', ({room, users}) => {
     outputUsers(users);
 });
 
+// message to others
 socket.on('message', message =>{
-    console.log(message);
     outputMessage(message);
     messageBox.scrollTop = messageBox.scrollHeight;
+});
+
+// message to me
+socket.on('messageMe', message =>{
+    outputMessageMe(message);
+    messageBox.scrollTop = messageBox.scrollHeight;
+});
+
+// admin bot message
+socket.on('messageAdmin', message => {
+    outputMessageAdmin(message);
+    messageBox.scrollTop = messageBox.scrollHeight;
+})
+
+// to change the user's name
+socket.on('userName', username => {
+    setName(username);
 });
 
 chatForm.addEventListener('submit', (e) => {
@@ -39,10 +56,27 @@ chatForm.addEventListener('submit', (e) => {
 function outputMessage(message) {
     const div = document.createElement('div');
     div.classList.add('message-sent');
+    div.classList.add('left');
+    div.innerHTML = `<h5>${message.username}</h5>
+    <h6>${message.time}</h6>
+    <p>${message.text}</p>`
+    document.querySelector('#chat-box').appendChild(div);
+}
+
+function outputMessageMe(message) {
+    const div = document.createElement('div');
+    div.classList.add('message-sent');
     div.classList.add('right');
     div.innerHTML = `<h5>${message.username}</h5>
     <h6>${message.time}</h6>
     <p>${message.text}</p>`
+    document.querySelector('#chat-box').appendChild(div);
+}
+
+function outputMessageAdmin(message) {
+    const div = document.createElement('div');
+    div.classList.add('admin-message');
+    div.innerHTML = `<div>${message.text} at ${message.time}</div>`
     document.querySelector('#chat-box').appendChild(div);
 }
 
@@ -53,6 +87,11 @@ function outputRoomname(room){
 
 // Add users name to DOM
 function outputUsers(users) {
-    userList.innerHTML = `
-    ${users.map(user => `<li>${user.username}</li>`).join('')}`
+    userList.innerHTML = `${users.map(user => `<li><i class="fa fa-user-circle"></i>${user.username}</li>`).join('')}`
+}
+
+// setting the name of the user
+function setName(username) {
+    const usernamediv = document.querySelector('#name');
+    usernamediv.innerHTML = `<i class="fa fa-user-circle"></i>${username}`;
 }

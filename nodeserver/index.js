@@ -21,10 +21,13 @@ io.on('connection', socket => {
         socket.join(user.room);
 
         // welcome the current user
-        socket.emit('message', formatMsg(botName, "Welcome to live chat"));
+        socket.emit('messageAdmin', formatMsg(botName, "Welcome to live chat"));
+
+        // setting the user's name
+        socket.emit('userName', user.username);
 
         // Broadcast when user joins
-        socket.broadcast.to(user.room).emit('message', formatMsg(botName, `${user.username} has joined the chat`));
+        socket.broadcast.to(user.room).emit('messageAdmin', formatMsg(botName, `${user.username} has joined the chat`));
 
         // send users and room information
         io.to(user.room).emit('roomUsers', {
@@ -36,7 +39,8 @@ io.on('connection', socket => {
     // listen for chatMessage
     socket.on('chatMessage', message => {
         let user = getCurrentUser(socket.id);
-        io.to(user.room).emit('message', formatMsg(`${user.username}`, message));
+        socket.emit('messageMe', formatMsg(`${user.username}`, message));
+        socket.broadcast.to(user.room).emit('message', formatMsg(`${user.username}`,message));
     });
 
 
@@ -44,7 +48,7 @@ io.on('connection', socket => {
     socket.on('disconnect', () => {
         let user = userLeave(socket.id);
         if (user) {
-            io.to(user.room).emit('message', formatMsg(botName, `${user.username} left`));
+            io.to(user.room).emit('messageAdmin', formatMsg(botName, `${user.username} left`));
 
             // send users and room information
             io.to(user.room).emit('roomUsers', {
