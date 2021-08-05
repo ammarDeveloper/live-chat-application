@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/05be7476bb.js" crossorigin="anonymous"></script>
+    <title>Chat Appliction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="head">
+        <h2 class="title"><i class="fa fa-comment"></i>Live Chat</h2>
+        <div class="profile-tag">
+            <div id="name" class="text b-text"><i class="fa fa-user-circle"></i>Ammar</div>
+        </div>
+    </nav>
+
+    <div class="super-div">
+        <div class="list-search">
+            
+            <div class="side-heading-bar"><i class="fa fa-weixin"></i>Room</div>
+            <div class ="room-name">Room Name</div>
+            <div class="user-list">
+                <div class="side-heading-bar">	
+                    <i class="fa fa-users"></i>Users</div>
+                <div class="list-of-users">
+                    <ul id="users-unordered-list">
+                        <li><i class="fa fa-user-circle"></i>Ammar</li>
+                        <li><i class="fa fa-user-circle"></i>Mehadini</li>
+                        <li><i class="fa fa-user-circle"></i>Mehi</li>
+                    </ul>
+                </div>
+                <div id="leave-btn-div">
+                    <a href="/public/index.html">
+                        <div class="leave-chat-btn">
+                            <i class="fa fa-sign-out"></i>
+                            <h5 class="text b-text">Leave Chat</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-div">
+            <section id="chat-box">
+                <div class="message-sent right">
+                    <h5>Ammar</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit dolores animi, alias deleniti vel recusandae commodi architecto? Laborum temporibus praesentium porro vel, in quidem, eum modi fugiat fuga ullam dolorum.</p>
+                    <h6>9:11 pm</h6>
+                </div>
+                <div class="message-sent left">
+                    <h5>Meha</h5>
+                    <p>Hello i am Mehi</p>
+                    <h6>9:11 pm</h6>
+                </div>
+            </section>
+            <div class="sending-message">
+                <form action="#" id="send-container">
+                    <input type="text" id="textmessage" name="text" autocomplete="off" placeholder="Type something..." required>
+                    <button class="sendbtn" type="submit">	
+                        <i class="fa fa-paper-plane"></i>Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.1/qs.js" integrity="sha512-DkxSbrm2xe6jcerSwLA4vS8WV7UarP44UjrS+Yp2MRFE2md2qPLpZVTyoxHrM2mvZ2Ft2zhPUMplV20zNFXriQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/script/client.js"></script>
+</body>
+
+</html>

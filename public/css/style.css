@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Kreon:wght@300;700&family=Red+Rose:wght@300;400&family=Syne&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow-y: hidden;
+}
+
+nav{
+    background: #3d3c3c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    color: white;
+}
+
+nav h2{
+    font-family: 'Carter One', cursive;
+}
+
+
+
+.title{
+    position: absolute;
+    left: 30px;
+}
+
+.newest{
+    position: absolute;
+    left: 275px;
+}
+
+
+.text{
+    display: inline;
+    padding: 5px 10px;
+    font-family: 'Mali', cursive;
+}
+
+.profile-tag{
+    position: absolute;
+    right: 100px;
+}
+
+#chat-box{
+    background-color: none;
+    margin: auto;
+    height: 80vh;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    overflow-y: auto;
+}
+
+.message-sent{
+    width: 40%;
+    margin: 5px 10px;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.right{
+    float: right;
+    clear: both;
+    background: #008eff;
+    color: white;
+}
+
+.left{
+    float: left;
+    clear: both;
+    background-color: whitesmoke;
+    color: black;
+}
+
+.left h5{
+    color: #f06300;
+}
+.left h6{
+    color: #f06300;
+    font-family: 'Kreon', serif;
+}
+
+.right h5{
+    color: black;
+}
+
+.right h6{
+    color: black;
+    font-family: 'Kreon', serif;
+}
+
+.super-div{
+    display: grid;
+    background: white;
+    grid-template-columns: 1fr 3fr;
+}
+
+.chat-div{
+    background-color: none;
+}
+
+
+
+#textmessage{
+    padding: 10px;
+    margin: 5px;
+    border-radius: 20px;
+    outline: none;
+    font-family: 'Mali', cursive;
+}
+
+.sendbtn{
+    margin: 5px;
+    padding: 2px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Mali', cursive;
+}
+
+.sendbtn:hover{
+    background: #5c5c5c;
+    color: white;
+}
+
+.sendbtn i{
+    padding: 0;
+    padding-right: 2px;
+}
+
+#send-container{
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+}
+
+
+
+.list-search{
+    width: 100%;
+    background-color: #3d3c3c;
+    height: 90vh;
+    position: relative;
+}
+
+.search{
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+}
+
+#search-bar {
+    width: 80%;
+    outline: none;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    background: none;
+}
+
+.fa-search{
+    padding: 5px;
+}
+
+.users{
+    background: aqua;
+    padding: 10px;
+}
+
+.message-sent h6{
+    display: inline;
+}
+
+.message-sent h5{
+    display: inline;
+    font-family: 'Kreon', serif;
+}
+
+.message-sent p{
+    font-family: 'Syne', sans-serif;
+}
+
+
+
+i{
+    padding: 5px 10px;
+}
+
+.side-heading-bar{
+    padding: 10px;
+    background-color: #1c1c1c;
+    color: white;
+    font-family: 'Carter One', cursive;
+}
+
+.room-name{
+    padding: 10px 10px;
+    color: white;
+    font-family: 'Mali', cursive;
+}
+
+#users-unordered-list{
+    overflow-y: auto;
+}
+
+#users-unordered-list li{
+    padding: 5px 10px;
+    color: white;
+    font-family: 'Mali', cursive;
+}
+
+#leave-btn-div{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #3d3c3c;
+}
+
+.list-of-users{
+    overflow-y: auto;
+    max-height: 60vh;
+}
+
+.leave-chat-btn{
+    background-color: #008eff;
+    padding: 5px 15px;
+    border-radius: 8px;
+    margin: 10px;
+    font-family: 'Mali', cursive;
+}
+
+.leave-chat-btn:hover{
+    background-color: #585858;
+    color: black;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
